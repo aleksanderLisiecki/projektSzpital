@@ -8,4 +8,4 @@ class Patient(models.Model):
     dicom_location = models.TextField(blank=True)
 
     def __str__(self):
-        return self.name + ' ' + self.surname
+        return self.name + ' '
