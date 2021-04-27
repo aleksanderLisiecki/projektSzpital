@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D6CC5DD1-B083-0535-A0CB-5A27759AC35D" name="Patients">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:10:29 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PESEL" id="EC79FE6D-80B7-528C-993D-DF113AC995B3">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:11:16 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FIRST_NAME" id="5C00D927-BE7A-6CB0-3CBC-FA064AB320F2">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:13:38 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SURNAME" id="AD8D55E1-8D5F-21BC-B4DB-56F43B2A5D96">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:13:38 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BIRTHDATE" id="8B5D02DF-A1C5-0492-D2EB-7B209C33CBA6">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:13:38 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEX" id="B453D257-F016-7BE2-20FD-E11BBE0F8AB2">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:39:18 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE_NO" id="81F32FE5-FFBE-4F89-50DB-F1E4A3CC8B96">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:13:38 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STREET_NAME" id="BA0A67B1-86B1-1F14-EF30-6CEA5E9C0A7C">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:13:38 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLAT_NO" id="240B395B-1592-817B-0E1B-6C5FC8FF97E8">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:05:06 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HOUSE_NO" id="BBA86548-280F-8FA6-7B29-0B309BBE2B59">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:05:06 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSTAL_CODE" id="674B5D5C-550C-8D38-CDAB-86931A660D96">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:05:06 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CITY" id="5232B968-FC0E-5342-F438-75711037FD71">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:05:06 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPTION" id="649C51B9-3D25-E407-39C3-B77AB9498427">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:32:54 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="06E9B745-51F3-6D29-C2BF-97BF85542661" name="Patient_PK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:15:25 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC79FE6D-80B7-528C-993D-DF113AC995B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

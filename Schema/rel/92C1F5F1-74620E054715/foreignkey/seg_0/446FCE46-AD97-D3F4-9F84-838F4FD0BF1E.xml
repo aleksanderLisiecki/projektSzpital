@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="446FCE46-AD97-D3F4-9F84-838F4FD0BF1E" containerWithKeyObject="E3BE2E85-F170-251B-0513-99A386227366" localFKIndex="38345137-244B-F085-06BB-6F46109D4EB6" name="Studies_Patients_FK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:17:39 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<referredTableLongName>Patients</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D6CC5DD1-B083-0535-A0CB-5A27759AC35D</referredTableID>
+<keyObject>06E9B745-51F3-6D29-C2BF-97BF85542661</keyObject>
+<referredKeyID>06E9B745-51F3-6D29-C2BF-97BF85542661</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>PESEL</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
