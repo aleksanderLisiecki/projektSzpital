@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E3BE2E85-F170-251B-0513-99A386227366" name="Studies">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:20:15 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="C4F5E9F8-EC80-5849-8BBA-01711A9A0F74">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:24:23 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="833E68AB-F2F2-79F7-B794-21E138FDAD59">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:28:31 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STUDY_DATE" id="C55F750D-1F60-6574-EEBB-6E4F351B18DF">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:28:31 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AGE" id="D43CA144-A200-D5D4-2BB1-6C2F49A75B11">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:49:52 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODALITIES" id="9CC00AE3-884B-6278-7040-2CACFB862BD7">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:58:29 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BODY_PARTS" id="8F368576-2C8C-79ED-5387-44B41EAC1C3D">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:58:29 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PATIENT_PESEL" id="8C184225-5A1E-8B53-4B86-8E4024A62A62">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:17:39 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="446FCE46-AD97-D3F4-9F84-838F4FD0BF1E" referredColumn="EC79FE6D-80B7-528C-993D-DF113AC995B3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7461A27F-9126-3BD6-07F5-261594E23BF3" name="Studies_PK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:24:27 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4F5E9F8-EC80-5849-8BBA-01711A9A0F74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38345137-244B-F085-06BB-6F46109D4EB6" name="Studies_Patients_FK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:17:39 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C184225-5A1E-8B53-4B86-8E4024A62A62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

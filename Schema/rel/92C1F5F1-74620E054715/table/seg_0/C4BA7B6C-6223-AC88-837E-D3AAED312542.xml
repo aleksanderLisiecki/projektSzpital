@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C4BA7B6C-6223-AC88-837E-D3AAED312542" name="DICOM">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 12:41:10 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="B9F2D7AA-223E-A457-A488-1D2D8598FF49">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:16:48 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOCATION" id="2ED83505-0761-4AD0-A8CE-AA1B439C6C82">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:16:48 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSTANCE" id="09BF48BB-1707-2BA2-1AB5-3E4AF6840161">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 15:01:21 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERIES_ID" id="9F9E396B-EDB2-09DE-E5DE-BFE51190BD15">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:20:11 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="003BA03B-7A41-C35F-73AE-55FC2834C6EA" referredColumn="AA49B5E8-34E1-CFA9-DEF2-A68FF756B56D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="58385318-45A1-8D7C-2823-40085496FBB6" name="DICOM_PK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:17:04 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9F2D7AA-223E-A457-A488-1D2D8598FF49"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1C5D3612-EDA5-403B-864A-2801D5AE7E90" name="DICOM_Series_FK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:20:11 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F9E396B-EDB2-09DE-E5DE-BFE51190BD15"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

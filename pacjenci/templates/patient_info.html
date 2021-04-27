@@ -1,13 +1,49 @@
 {% extends 'main.html' %}
 {% block patient %}
+<div>
+    <h3>Informacje o pacjencie:</h3>
+    <div class="row">
+        <ul class="col s6">
+            <li><b>Pesel:</b> {{patient_data.pesel}}</li>
+            <li><b>Imię:</b> {{patient_data.first_name}}</li>
+            <li><b>Nazwisko:</b> {{patient_data.surname}}</li>
+            <li><b>Data urodzenia:</b> {{patient_data.birthdate}}</li>
+            <li><b>Płeć:</b> {{patient_data.sex}}</li>
+            <li><b>Numer telefonu:</b> {{patient_data.phone_no}}</li>
+        </ul>
+        <ul class="col s6">
+            <li><b>Ulica:</b> {{patient_data.street_name}}</li>
+            <li><b>Numer domu:</b> {{patient_data.house_no}}</li>
+            <li><b>Numer mieszkania:</b> {{patient_data.flat_no}}</li>
+            <li><b>Adres pocztowy:</b> {{patient_data.postal_code}}</li>
+            <li><b>Miasto:</b> {{patient_data.city}}</li>
+        </ul>
+    </div>
+    <h3>Badania</h3>
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Data</th>
+                <th>Wiek</th>
+                <th>Modalności</th>
+                <th>Części ciała</th>
+                <th>Szczegóły</th>
+            </tr>
+        </thead>
 
-{% if patient_details %}
-
-<p>{{patient_details.name}}</p>
-<p>{{patient_details.surname}}</p>
-<p>{{patient_details.surname}}</p>
-
-{% else %}
-<p>Nie ma takiego pacjenta</p>
-{% endif %}
+        <tbody>
+            {% for studies in patient_studies %}
+            <tr>
+                <td>{{studies.name}}</td>
+                <td>{{studies.study_date}}</td>
+                <td>{{studies.age}}</td>
+                <td>{{studies.modalities}}</td>
+                <td>{{studies.body_parts}}</td>
+                <td> <a href="/studies/{{studies.id}}"><i class="material-icons">info</i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock patient %}

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="D070BE4A-780A-8E1F-2BF0-DE0E41B49111">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 11:09:46 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>
