@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Strona przykładowa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper blue lighten-5">
+            <div class="container">
+                <a href="/list/" class="left brand-logo black-text">Strona główna</a>
+                <a href="/admin/" class="right waves-effect waves-light btn blue darken-2">Zaloguj się</a>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container">
+
+        {% block patient %} {% endblock patient %}
+    </div>
+</body>

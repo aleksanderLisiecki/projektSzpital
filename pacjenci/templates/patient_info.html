@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% block patient %}
+
+{% if patient_details %}
+
+<p>{{patient_details.name}}</p>
+<p>{{patient_details.surname}}</p>
+<p>{{patient_details.surname}}</p>
+
+{% else %}
+<p>Nie ma takiego pacjenta</p>
+{% endif %}
+{% endblock patient %}
