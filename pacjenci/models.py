@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 
 class Patient(models.Model):
     class Meta:
@@ -63,9 +63,18 @@ class DICOM(models.Model):
     class Meta:
         verbose_name_plural = "DICOM"
     instance = models.IntegerField()
-    location = models.CharField(max_length=20)
+    location = models.TextField(blank=True)
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
-    # dicom_file = models.FileField(blank=True, default=None, null=True)
+    dicom_file = models.FileField(blank=True, default=None, null=True)
+
+    #def save(self, *args, **kwargs):
+    #    if not self.pk:
+    #        self.location = settings.MEDIA_ROOT + '/' + self.dicom_file.name
+    #    super(DICOM, self).save(*args, **kwargs)
+
+    def __init__(self, *args, **kwargs):
+        super(DICOM, self).__init__(*args, **kwargs)
+        self.location = settings.MEDIA_ROOT + '\\' + self.dicom_file.name
 
     def __str__(self):
         return self.series.__str__() + '/' + str(self.instance)

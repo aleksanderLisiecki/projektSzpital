@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 from pacjenci.views import *
 
 urlpatterns = [
@@ -24,4 +26,4 @@ urlpatterns = [
     path('patient/<id>/', patient_info, name='patient_info'),
     path('studies/<id>/', studies_info, name='studies_info'),
     path('series/<id>/', series_info, name='series_info'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
