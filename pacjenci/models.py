@@ -65,6 +65,7 @@ class DICOM(models.Model):
     instance = models.IntegerField()
     location = models.CharField(max_length=20)
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
+    # dicom_file = models.FileField(blank=True, default=None, null=True)
 
     def __str__(self):
         return self.series.__str__() + '/' + str(self.instance)

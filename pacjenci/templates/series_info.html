@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block patient %}
+<div>
+    <h3>Informacje o serii:</h3>
+    <div class="row">
+        <ul class="col s6">
+            <li><b>Numer:</b> {{series_data.series_num}}</li>
+            <li><b>Data badań:</b> {{series_data.date}}</li>
+            <li><b>Część ciała:</b> {{series_data.body_part}}</li>
+            <li><b>Opis:</b> {{series_data.description}}</li>
+            <li><b>Komentarz:</b> {{series_data.comment}}</li>
+        </ul>
+    </div>
+    <h3>DICOM</h3>
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Plik</th>
+                <th>Seria</th>
+                <th>Lokalizacja</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for dicoms in dicom_list %}
+            <tr>
+                <td>{{dicoms.instance}}</td>
+                <td>{{dicoms.series}}</td>
+                <td>{{dicoms.location}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock patient %}

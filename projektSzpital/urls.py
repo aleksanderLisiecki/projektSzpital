@@ -22,4 +22,6 @@ urlpatterns = [
     path('', index),
     path('list/', patient_list, name='patient_list'),
     path('patient/<id>/', patient_info, name='patient_info'),
+    path('studies/<id>/', studies_info, name='studies_info'),
+    path('series/<id>/', series_info, name='series_info'),
 ]

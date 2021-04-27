@@ -3,8 +3,11 @@
 <table class="highlight">
     <thead>
         <tr>
+            <th>Pesel</th>
             <th>Imię</th>
             <th>Nazwisko</th>
+            <th>Płeć</th>
+            <th>Numer telefonu</th>
             <th>Szczegóły</th>
         </tr>
     </thead>
@@ -12,9 +15,12 @@
     <tbody>
         {% for patient in patients %}
         <tr>
-            <td>{{patient.name}}</td>
+            <td>{{patient.pesel}}</td>
+            <td>{{patient.first_name}}</td>
             <td>{{patient.surname}}</td>
-            <td> <a href="/patient/{{patient.id}}/"><i class="material-icons">info</i></a></td>
+            <td>{{patient.sex}}</td>
+            <td>{{patient.phone_no}}</td>
+            <td> <a href="/patient/{{patient.pesel}}/"><i class="material-icons">info</i></a></td>
         </tr>
         {% endfor %}
     </tbody>
