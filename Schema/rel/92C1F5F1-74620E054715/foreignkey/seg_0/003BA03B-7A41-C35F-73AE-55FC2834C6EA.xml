@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="003BA03B-7A41-C35F-73AE-55FC2834C6EA" containerWithKeyObject="C4BA7B6C-6223-AC88-837E-D3AAED312542" localFKIndex="1C5D3612-EDA5-403B-864A-2801D5AE7E90" name="DICOM_Series_FK">
+<createdBy>Komp</createdBy>
+<createdTime>2021-04-27 13:20:11 UTC</createdTime>
+<ownerDesignName>Schema</ownerDesignName>
+<referredTableLongName>Series</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>99BD57FA-296E-8285-4AF4-F48E47145DB5</referredTableID>
+<keyObject>FAAC32F6-7D61-7296-0461-00651FF5955F</keyObject>
+<referredKeyID>FAAC32F6-7D61-7296-0461-00651FF5955F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
