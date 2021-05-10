@@ -1,5 +1,7 @@
 {% extends 'main.html' %}
 {% block patient %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'scss/timeline.scss' %}">
 <div>
     <h3>Informacje o pacjencie:</h3>
     <div class="row">
@@ -45,5 +47,97 @@
             {% endfor %}
         </tbody>
     </table>
+    <h3>Badania</h3>
+    {% block timeline %} {% endblock timeline %}
+    <div class="timeline">
+
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://lorempixel.com/800/400/food/1">
+                    <span class="card-title gradient white-text text-darken-4">
+                        2018<br>
+                        <small>January 17th</small>
+                    </span>
+                </div>
+                <div class="card-content teal white-text">
+                    <p>Google announces the search algorithm change dubbed the “Speed Update" coming in July.</p>
+                </div>
+            </div>
+            <div class="timeline-badge red lighten-3 white-text"></div>
+        </div>
+
+
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://lorempixel.com/800/400/food/2">
+                    <span class="card-title gradient white-text text-darken-4">
+                        2018<br>
+                        <small>January 17th</small>
+                    </span>
+                </div>
+                <div class="card-content teal white-text">
+                    <p>Google announces the search algorithm change dubbed the “Speed Update" coming in July.</p>
+                </div>
+            </div>
+            <div class="timeline-badge red lighten-3 white-text"></div>
+        </div>
+
+
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://lorempixel.com/800/400/food/3">
+                    <span class="card-title gradient white-text text-darken-4">
+                        2018<br>
+                        <small>January 17th</small>
+                    </span>
+                </div>
+                <div class="card-content teal white-text">
+                    <p>Google announces the search algorithm change dubbed the “Speed Update" coming in July.</p>
+                </div>
+            </div>
+            <div class="timeline-badge red lighten-3 white-text"></div>
+        </div>
+
+
+
+
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://lorempixel.com/800/400/food/4">
+                    <span class="card-title gradient white-text text-darken-4">
+                        2018<br>
+                        <small>January 17th</small>
+                    </span>
+                </div>
+                <div class="card-content teal white-text">
+                    <p>Google announces the search algorithm change dubbed the “Speed Update" coming in July.</p>
+                </div>
+            </div>
+            <div class="timeline-badge red lighten-3 white-text"></div>
+        </div>
+
+
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://lorempixel.com/800/400/food/5">
+                    <span class="card-title gradient white-text text-darken-4">
+                        2018<br>
+                        <small>January 17th</small>
+                    </span>
+                </div>
+                <div class="card-content teal white-text">
+                    <p>Google announces the search algorithm change dubbed the “Speed Update" coming in July.</p>
+                </div>
+            </div>
+            <div class="timeline-badge red lighten-3 white-text"></div>
+        </div>
+
+
+    </div>
 </div>
 {% endblock patient %}
