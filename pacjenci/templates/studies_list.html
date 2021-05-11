@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th>Nazwa</th>
+            <th>Typ prześwietlenia</th>
             <th>Data</th>
             <th>Wiek</th>
             <th>Modalności</th>
@@ -16,6 +17,7 @@
         {% for studies in patient_studies %}
         <tr>
             <td>{{studies.name}}</td>
+            <td>{{studies.xray_type}}</td>
             <td>{{studies.study_date}}</td>
             <td>{{studies.age}}</td>
             <td>{{studies.modalities}}</td>

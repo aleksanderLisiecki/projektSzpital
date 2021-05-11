@@ -15,7 +15,7 @@ def patient_list(request):
 
 def patient_info(request, id):
     patient_data = Patient.objects.get(pesel=id)
-    patient_studies = Studies.objects.filter(patient = id)
+    patient_studies = Studies.objects.filter(patient = id).order_by('-study_date')
     data = {
         'patient_data' : patient_data,
         'patient_studies' : patient_studies
