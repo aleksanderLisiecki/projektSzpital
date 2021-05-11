@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Strona przykładowa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
-    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -14,6 +11,9 @@
 <body>
     <nav>
         <div class="nav-wrapper blue lighten-5">
+            <ul class="left">
+                <li><a class="waves-effect waves-light btn blue darken-2" onclick="goBack()"><i class="material-icons">chevron_left</i></a></li>
+            </ul>
             <div class="container">
                 <a href="/list/" class="left brand-logo black-text">Strona główna</a>
                 <ul class="right">
@@ -27,4 +27,10 @@
     <div class="container">
         {% block patient %} {% endblock patient %}
     </div>
+    <script>
+        function goBack() {
+            if(window.location.href !== 'http://127.0.0.1:8000/list/')
+          window.history.back();
+        }
+    </script>
 </body>
