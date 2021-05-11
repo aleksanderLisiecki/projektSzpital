@@ -20,6 +20,9 @@ def patient_info(request, id):
         'patient_data' : patient_data,
         'patient_studies' : patient_studies
     }
+    rtg_on = request.GET.get('rtg')
+
+    print(rtg_on)
     return render(request, 'patient_info.html', data)
 
 def studies_info(request, id):

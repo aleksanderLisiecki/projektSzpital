@@ -17,6 +17,7 @@
 .timeline .timeline-item {
   margin-bottom: 20px;
   position: relative;
+  max-width: 300px;
 }
 .timeline .timeline-item:before,
 .timeline .timeline-item:after {
@@ -51,14 +52,14 @@
   top: 2px;
   left: 0px;
 }
-.timeline .timeline-item .timeline-badge.primary {
-  background-color: #1f9eba;
+.timeline .timeline-item .timeline-badge.rtg {
+  background-color: #bbdefb;
 }
-.timeline .timeline-item .timeline-badge.info {
-  background-color: #5bc0de;
+.timeline .timeline-item .timeline-badge.mri {
+  background-color: #ffcdd2;
 }
-.timeline .timeline-item .timeline-badge.success {
-  background-color: #59ba1f;
+.timeline .timeline-item .timeline-badge.other {
+  background-color: #c8e6c9;
 }
 .timeline .timeline-item .timeline-badge.warning {
   background-color: #d1bd10;
@@ -167,4 +168,11 @@
   top: auto;
   bottom: 0px;
   left: 43px;
+}
+.mark-circle{
+  border-width: 3px;
+  border-radius: 50%;
+}
+.mark-circle .empty{
+  background-color: white;
 }
