@@ -52,13 +52,13 @@
   top: 2px;
   left: 0px;
 }
-.timeline .timeline-item .timeline-badge.rtg {
+.timeline .timeline-item .timeline-badge.RTG {
   background-color: #bbdefb;
 }
-.timeline .timeline-item .timeline-badge.mri {
+.timeline .timeline-item .timeline-badge.MRI {
   background-color: #ffcdd2;
 }
-.timeline .timeline-item .timeline-badge.other {
+.timeline .timeline-item .timeline-badge.Other {
   background-color: #c8e6c9;
 }
 .timeline .timeline-item .timeline-badge.warning {

@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from django.db.models import Q
 from django.http import HttpResponse
 from .models import *
 
+def is_valid_queryparam(param):
+    return param != '' and param is not None
 
 def index(request):
     return render(request, 'main.html')
@@ -16,13 +19,36 @@ def patient_list(request):
 def patient_info(request, id):
     patient_data = Patient.objects.get(pesel=id)
     patient_studies = Studies.objects.filter(patient = id).order_by('-study_date')
+    
+    rtg_on_query = request.GET.get('rtg')
+    mri_on_query = request.GET.get('mri')
+    other_on_query = request.GET.get('other_xray')
+    start_date_query = request.GET.get('start_date')
+    end_date_query = request.GET.get('end_date')
+    body_part_query = request.GET.get('body_part')
+
+    if is_valid_queryparam(body_part_query):
+        patient_studies = patient_studies.filter(body_parts__icontains = body_part_query)
+
+    if is_valid_queryparam(start_date_query):
+        patient_studies = patient_studies.filter(study_date__gte = start_date_query)
+
+    if is_valid_queryparam(end_date_query):
+        patient_studies = patient_studies.filter(study_date__lt = end_date_query)
+
+    # print(patient_studies.XRAY_CHOICES)
+    if is_valid_queryparam(rtg_on_query):
+        patient_studies = patient_studies.filter(xray_type__icontains = "RTG")
+    if is_valid_queryparam(mri_on_query):
+        patient_studies = patient_studies.filter(xray_type__icontains = "MRI")
+    if is_valid_queryparam(other_on_query):
+        patient_studies = patient_studies.filter(xray_type__icontains = "Other")
+
+
     data = {
         'patient_data' : patient_data,
         'patient_studies' : patient_studies
     }
-    rtg_on = request.GET.get('rtg')
-
-    print(rtg_on)
     return render(request, 'patient_info.html', data)
 
 def studies_info(request, id):

@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% block patient %}
+
 <head>
     {% load static %}
     <link rel="stylesheet" href="{% static 'timeline.css' %}" type="text/css">
@@ -24,7 +25,7 @@
         </ul>
     </div>
     <h3>Badania</h3>
-    <table class="highlight">
+    <!-- <table class="highlight">
         <thead>
             <tr>
                 <th>Nazwa</th>
@@ -50,7 +51,7 @@
             </tr>
             {% endfor %}
         </tbody>
-    </table>
+    </table> -->
     {% include 'timeline.html' %}
 </div>
 {% endblock patient %}
