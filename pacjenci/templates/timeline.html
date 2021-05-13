@@ -48,7 +48,7 @@
             </div>
             <div class="col s2 valign-wrapper">
                 <ul>
-                    <li><button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Szukaj
+                    <li><button class="btn waves-effect waves-light blue darken-2" type="submit" onclick="saveFilter()" name="action">Szukaj
                             <i class="material-icons right">search</i>
                         </button></li>
 
@@ -146,5 +146,29 @@
 
 
     // }
+    
+    function saveFilter() {
+        localStorage.setItem("rtg", $('#inputRtg').val());
+        localStorage.setItem("mri", $('#inputMri').val());
+        localStorage.setItem("other", $('#inputOther').val());
+        localStorage.setItem("start", $('#startDate').val());
+        localStorage.setItem("end", $('#endDate').val());
+        localStorage.setItem("body", $('#bodyPart').val());
+    }
+    window.onload = readFilter;
+    function readFilter() {
+        if(localStorage.getItem("rtg") == null) localStorage.setItem("rtg", "RTG");
+        else document.getElementById("inputRtg").value = window.localStorage.getItem("rtg");
+        if(localStorage.getItem("mri") == null) localStorage.setItem("mri", "MRI");
+        else document.getElementById("inputMri").value = window.localStorage.getItem("mri");
+        if(localStorage.getItem("other") == null) localStorage.setItem("other", "Other");
+        else document.getElementById("inputOther").value = window.localStorage.getItem("other");
+        if(localStorage.getItem("start") == "") localStorage.setItem("start", "");
+        else document.getElementById("startDate").value = window.localStorage.getItem("start");
+        if(localStorage.getItem("end") == "") localStorage.setItem("end", "");
+        else document.getElementById("endDate").value = window.localStorage.getItem("end");
+        if(localStorage.getItem("body") == "") localStorage.setItem("body", "");
+        else document.getElementById("bodyPart").value = window.localStorage.getItem("body");
+    }
 </script>
 {% endblock timeline %}
