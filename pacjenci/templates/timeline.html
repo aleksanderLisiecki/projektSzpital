@@ -2,9 +2,9 @@
 <div>
     <div class="row card-panel">
         <form>
-            <div class="col s3">
+            <div class="col s3 form-group">
                 <p>Typ prześwietlenia</p>
-                <!-- {% for type in patient_studies.XRAY_CHOICES %}
+                <!-- {% for type in patient_studies.type %}
                 <p>
                     <label>
                         <input type="checkbox" name="{{type}}" />
@@ -14,44 +14,51 @@
                 {% endfor %} -->
                 <p>
                     <label>
-                        <input type="checkbox" name="rtg" />
+                        <input type="checkbox" name="rtg" value="RTG" id="inputRtg" />
                         <span class="blue-text text-lighten-1">RTG</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" name="mri" />
+                        <input type="checkbox" name="mri" value="MRI" id="inputMri" />
                         <span class="red-text text-lighten-1">Rezonans</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" name="other_xray" />
+                        <input type="checkbox" name="other_xray" value="Other" id="inputOther" />
                         <span class="green-text text-lighten-1">Inne</span>
                     </label>
                 </p>
             </div>
             <div class="col s2">
                 <p>Data początkowa</p>
-                <input type="date" name="start_date">
+                <input type="date" name="start_date" id="startDate">
 
             </div>
             <div class="col s2">
                 <p>Data końcowa</p>
-                <input type="date" name="end_date">
+                <input type="date" name="end_date" id="endDate">
             </div>
             <div class="col s3">
                 <p>Część ciała</p>
                 <div class="row">
-                    <input type="text" name="body_part">
+                    <input type="text" name="body_part" id="bodyPart">
                 </div>
             </div>
             <div class="col s2 valign-wrapper">
-                <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Szukaj
-                    <i class="material-icons right">search</i>
-                </button>
+                <ul>
+                    <li><button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Szukaj
+                            <i class="material-icons right">search</i>
+                        </button></li>
+
+                </ul>
+
             </div>
         </form>
+        <button class="btn waves-effect waves-light blue darken-2" id="check" onclick="printvalues()">Sprawdz
+            <i class="material-icons right">search</i>
+        </button>
     </div>
     <div class="row"></div>
 
@@ -93,4 +100,51 @@
         $('.datepicker').datepicker();
     });
 </script> -->
+<script>
+    // document.getElementById("check").click(printvalues)
+    // function printvalues() {
+    //     values = [
+    //         $('#inputRtg').val(),
+    //         $('#inputMri').val(),
+    //         $('#inputOther').val(),
+    //         $('#startDate').val(),
+    //         $('#endDate').val(),
+    //         $('#bodyPart').val()
+    //     ]
+    //     values.forEach(value => {
+    //         console.log(value)
+    //     });
+
+    // }
+    // window.onbeforeunload = function () {
+    //     localStorage.setItem("rtg", $('#inputRtg').val());
+    //     localStorage.setItem("mri", $('#inputMri').val());
+    //     localStorage.setItem("other", $('#inputOther').val());
+    //     localStorage.setItem("start", $('#start-date').val());
+    //     localStorage.setItem("end", $('#end-date').val());
+    //     localStorage.setItem("body", $('#body-part').val());
+    // }
+    // window.onload = function () {
+
+    //     var inputRtg = localStorage.getItem("rtg");
+    //     if (inputRtg !== null) $('#inputRtg').val(inputRtg);
+
+    //     var inputMri = localStorage.getItem("mri");
+    //     if (inputMri !== null) $('#inputMri').val(inputMri);
+
+    //     var inputOther = localStorage.getItem("other");
+    //     if (inputOther !== null) $('#inputOther').val(inputOther);
+
+    //     var startDate = localStorage.getItem("start");
+    //     if (startDate !== null) $('#startDate').val(startDate);
+
+    //     var endDate = localStorage.getItem("end");
+    //     if (endDate !== null) $('#endDate').val(endDate);
+
+    //     var bodyPart = localStorage.getItem("body");
+    //     if (bodyPart !== null) $('#bodyPart').val(bodyPart);
+
+
+    // }
+</script>
 {% endblock timeline %}

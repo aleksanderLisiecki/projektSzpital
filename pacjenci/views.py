@@ -20,9 +20,16 @@ def patient_info(request, id):
     patient_data = Patient.objects.get(pesel=id)
     patient_studies = Studies.objects.filter(patient = id).order_by('-study_date')
     
+    patient_studies_filtered = []
+
     rtg_on_query = request.GET.get('rtg')
     mri_on_query = request.GET.get('mri')
     other_on_query = request.GET.get('other_xray')
+    checkboxes = [
+        rtg_on_query,
+        mri_on_query,
+        other_on_query
+    ]
     start_date_query = request.GET.get('start_date')
     end_date_query = request.GET.get('end_date')
     body_part_query = request.GET.get('body_part')
@@ -35,16 +42,18 @@ def patient_info(request, id):
 
     if is_valid_queryparam(end_date_query):
         patient_studies = patient_studies.filter(study_date__lt = end_date_query)
+    # print(checkboxes)
+    # print(rtg_on_query)
+    # print(mri_on_query)
+    # print(other_on_query)
+    for i in checkboxes:
+        print(i)
+        if is_valid_queryparam(i):
+            patient_studies_filtered += patient_studies.filter(xray_type__icontains = i)
 
-    # print(patient_studies.XRAY_CHOICES)
-    if is_valid_queryparam(rtg_on_query):
-        patient_studies = patient_studies.filter(xray_type__icontains = "RTG")
-    if is_valid_queryparam(mri_on_query):
-        patient_studies = patient_studies.filter(xray_type__icontains = "MRI")
-    if is_valid_queryparam(other_on_query):
-        patient_studies = patient_studies.filter(xray_type__icontains = "Other")
-
-
+    # print(patient_studies_filtered)
+    if patient_studies_filtered:
+        patient_studies = patient_studies_filtered
     data = {
         'patient_data' : patient_data,
         'patient_studies' : patient_studies
