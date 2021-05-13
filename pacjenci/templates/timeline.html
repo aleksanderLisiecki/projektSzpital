@@ -117,58 +117,58 @@
 
     // }
     // window.onbeforeunload = function () {
-    //     localStorage.setItem("rtg", $('#inputRtg').val());
-    //     localStorage.setItem("mri", $('#inputMri').val());
-    //     localStorage.setItem("other", $('#inputOther').val());
-    //     localStorage.setItem("start", $('#start-date').val());
-    //     localStorage.setItem("end", $('#end-date').val());
-    //     localStorage.setItem("body", $('#body-part').val());
+    //     sessionStorage.setItem("rtg", $('#inputRtg').val());
+    //     sessionStorage.setItem("mri", $('#inputMri').val());
+    //     sessionStorage.setItem("other", $('#inputOther').val());
+    //     sessionStorage.setItem("start", $('#start-date').val());
+    //     sessionStorage.setItem("end", $('#end-date').val());
+    //     sessionStorage.setItem("body", $('#body-part').val());
     // }
     // window.onload = function () {
 
-    //     var inputRtg = localStorage.getItem("rtg");
+    //     var inputRtg = sessionStorage.getItem("rtg");
     //     if (inputRtg !== null) $('#inputRtg').val(inputRtg);
 
-    //     var inputMri = localStorage.getItem("mri");
+    //     var inputMri = sessionStorage.getItem("mri");
     //     if (inputMri !== null) $('#inputMri').val(inputMri);
 
-    //     var inputOther = localStorage.getItem("other");
+    //     var inputOther = sessionStorage.getItem("other");
     //     if (inputOther !== null) $('#inputOther').val(inputOther);
 
-    //     var startDate = localStorage.getItem("start");
+    //     var startDate = sessionStorage.getItem("start");
     //     if (startDate !== null) $('#startDate').val(startDate);
 
-    //     var endDate = localStorage.getItem("end");
+    //     var endDate = sessionStorage.getItem("end");
     //     if (endDate !== null) $('#endDate').val(endDate);
 
-    //     var bodyPart = localStorage.getItem("body");
+    //     var bodyPart = sessionStorage.getItem("body");
     //     if (bodyPart !== null) $('#bodyPart').val(bodyPart);
 
 
     // }
     
     function saveFilter() {
-        localStorage.setItem("rtg", $('#inputRtg').prop("checked"));
-        localStorage.setItem("mri", $('#inputMri').prop("checked"));
-        localStorage.setItem("other", $('#inputOther').prop("checked"));
-        localStorage.setItem("start", $('#startDate').val());
-        localStorage.setItem("end", $('#endDate').val());
-        localStorage.setItem("body", $('#bodyPart').val());
+        sessionStorage.setItem("rtg", $('#inputRtg').prop("checked"));
+        sessionStorage.setItem("mri", $('#inputMri').prop("checked"));
+        sessionStorage.setItem("other", $('#inputOther').prop("checked"));
+        sessionStorage.setItem("start", $('#startDate').val());
+        sessionStorage.setItem("end", $('#endDate').val());
+        sessionStorage.setItem("body", $('#bodyPart').val());
     }
     window.onload = readFilter;
     function readFilter() {
-        if(localStorage.getItem("rtg") == null) document.getElementById("inputRtg").checked = JSON.parse("false");
-        else document.getElementById("inputRtg").checked = JSON.parse(localStorage.getItem("rtg"));
-        if(localStorage.getItem("mri") == null) document.getElementById("inputMri").checked = JSON.parse("false");
-        else document.getElementById("inputMri").checked = JSON.parse(localStorage.getItem("mri"));
-        if(localStorage.getItem("other") == null) document.getElementById("inputOther").checked = JSON.parse("false");
-        else document.getElementById("inputOther").checked = JSON.parse(localStorage.getItem("other"));
-        if(localStorage.getItem("start") == "") localStorage.setItem("start", "");
-        else document.getElementById("startDate").value = localStorage.getItem("start");
-        if(localStorage.getItem("end") == "") localStorage.setItem("end", "");
-        else document.getElementById("endDate").value = localStorage.getItem("end");
-        if(localStorage.getItem("body") == "") localStorage.setItem("body", "");
-        else document.getElementById("bodyPart").value = localStorage.getItem("body");
+        if(sessionStorage.getItem("rtg") == null) document.getElementById("inputRtg").checked = JSON.parse("false");
+        else document.getElementById("inputRtg").checked = JSON.parse(sessionStorage.getItem("rtg"));
+        if(sessionStorage.getItem("mri") == null) document.getElementById("inputMri").checked = JSON.parse("false");
+        else document.getElementById("inputMri").checked = JSON.parse(sessionStorage.getItem("mri"));
+        if(sessionStorage.getItem("other") == null) document.getElementById("inputOther").checked = JSON.parse("false");
+        else document.getElementById("inputOther").checked = JSON.parse(sessionStorage.getItem("other"));
+        if(sessionStorage.getItem("start") == "") sessionStorage.setItem("start", "");
+        else document.getElementById("startDate").value = sessionStorage.getItem("start");
+        if(sessionStorage.getItem("end") == "") sessionStorage.setItem("end", "");
+        else document.getElementById("endDate").value = sessionStorage.getItem("end");
+        if(sessionStorage.getItem("body") == "") sessionStorage.setItem("body", "");
+        else document.getElementById("bodyPart").value = sessionStorage.getItem("body");
     }
 </script>
 {% endblock timeline %}
