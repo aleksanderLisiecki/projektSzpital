@@ -148,27 +148,27 @@
     // }
     
     function saveFilter() {
-        localStorage.setItem("rtg", $('#inputRtg').val());
-        localStorage.setItem("mri", $('#inputMri').val());
-        localStorage.setItem("other", $('#inputOther').val());
+        localStorage.setItem("rtg", $('#inputRtg').prop("checked"));
+        localStorage.setItem("mri", $('#inputMri').prop("checked"));
+        localStorage.setItem("other", $('#inputOther').prop("checked"));
         localStorage.setItem("start", $('#startDate').val());
         localStorage.setItem("end", $('#endDate').val());
         localStorage.setItem("body", $('#bodyPart').val());
     }
     window.onload = readFilter;
     function readFilter() {
-        if(localStorage.getItem("rtg") == null) localStorage.setItem("rtg", "RTG");
-        else document.getElementById("inputRtg").value = window.localStorage.getItem("rtg");
-        if(localStorage.getItem("mri") == null) localStorage.setItem("mri", "MRI");
-        else document.getElementById("inputMri").value = window.localStorage.getItem("mri");
-        if(localStorage.getItem("other") == null) localStorage.setItem("other", "Other");
-        else document.getElementById("inputOther").value = window.localStorage.getItem("other");
+        if(localStorage.getItem("rtg") == null) document.getElementById("inputRtg").checked = JSON.parse("false");
+        else document.getElementById("inputRtg").checked = JSON.parse(localStorage.getItem("rtg"));
+        if(localStorage.getItem("mri") == null) document.getElementById("inputMri").checked = JSON.parse("false");
+        else document.getElementById("inputMri").checked = JSON.parse(localStorage.getItem("mri"));
+        if(localStorage.getItem("other") == null) document.getElementById("inputOther").checked = JSON.parse("false");
+        else document.getElementById("inputOther").checked = JSON.parse(localStorage.getItem("other"));
         if(localStorage.getItem("start") == "") localStorage.setItem("start", "");
-        else document.getElementById("startDate").value = window.localStorage.getItem("start");
+        else document.getElementById("startDate").value = localStorage.getItem("start");
         if(localStorage.getItem("end") == "") localStorage.setItem("end", "");
-        else document.getElementById("endDate").value = window.localStorage.getItem("end");
+        else document.getElementById("endDate").value = localStorage.getItem("end");
         if(localStorage.getItem("body") == "") localStorage.setItem("body", "");
-        else document.getElementById("bodyPart").value = window.localStorage.getItem("body");
+        else document.getElementById("bodyPart").value = localStorage.getItem("body");
     }
 </script>
 {% endblock timeline %}
