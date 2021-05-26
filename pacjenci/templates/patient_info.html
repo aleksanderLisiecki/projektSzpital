@@ -1,5 +1,10 @@
 {% extends 'main.html' %}
 {% block patient %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'timeline.css' %}" type="text/css">
+</head>
 <div>
     <h3>Informacje o pacjencie:</h3>
     <div class="row">
@@ -20,10 +25,11 @@
         </ul>
     </div>
     <h3>Badania</h3>
-    <table class="highlight">
+    <!-- <table class="highlight">
         <thead>
             <tr>
                 <th>Nazwa</th>
+                <th>Typ prześwietlenia</th>
                 <th>Data</th>
                 <th>Wiek</th>
                 <th>Modalności</th>
@@ -36,6 +42,7 @@
             {% for studies in patient_studies %}
             <tr>
                 <td>{{studies.name}}</td>
+                <td>{{studies.xray_type}}</td>
                 <td>{{studies.study_date}}</td>
                 <td>{{studies.age}}</td>
                 <td>{{studies.modalities}}</td>
@@ -44,6 +51,7 @@
             </tr>
             {% endfor %}
         </tbody>
-    </table>
+    </table> -->
+    {% include 'timeline.html' %}
 </div>
 {% endblock patient %}
