@@ -94,6 +94,6 @@ def DICOM_handler(sender, created, instance=False, **kwargs):
         dicom = DicomReader(dicom_file)
         study_date = dicom.study_date[:2] + '.' + dicom.study_date[4:6] + '.' + dicom.study_date[:4]
         series_date = dicom.study_date[:2] + '.' + dicom.study_date[4:6] + '.' + dicom.study_date[:4]
-        description = study_date + '|' + dicom.patient_age + '|' + dicom.modality + '|' + dicom.body_part + '|' + str(dicom.series_num) + '|' + series_date + '|' + dicom.series_description + '|' + str(dicom.series_num)
+        description = "Data badania: " + study_date + '\nWiek: ' + dicom.patient_age + '\nModality: ' + dicom.modality + '\nCzęść ciała: ' + dicom.body_part + '\nNumer serii: ' + str(dicom.series_num) + '\nData wykoniania: ' + series_date + '\nOpis: ' + dicom.series_description + '\nNumer instancji: ' + str(dicom.instance_number)
         instance.description = description
         instance.save()
