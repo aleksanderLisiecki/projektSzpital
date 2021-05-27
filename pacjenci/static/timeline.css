@@ -1,3 +1,8 @@
+.custom-container {
+  margin: 0 auto;
+  width: 95%;
+}
+
 .timeline,
 .timeline-horizontal {
   list-style: none;
@@ -5,7 +10,7 @@
   position: relative;
 }
 .timeline:before {
-  top: 40px;
+  top: 0;
   bottom: 0;
   position: absolute;
   content: " ";
