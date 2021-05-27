@@ -8,18 +8,22 @@
 <div>
     <h5>Informacje o pacjencie:</h5>
     <div class="row">
-        <ul class="col s6">
+        <ul class="col s2">
             <li><b>Pesel:</b> {{patient_data.pesel}}</li>
             <li><b>Imię:</b> {{patient_data.first_name}}</li>
             <li><b>Nazwisko:</b> {{patient_data.surname}}</li>
+        </ul>
+        <ul class="col s2">
             <li><b>Data urodzenia:</b> {{patient_data.birthdate}}</li>
             <li><b>Płeć:</b> {{patient_data.sex}}</li>
             <li><b>Numer telefonu:</b> {{patient_data.phone_no}}</li>
         </ul>
-        <ul class="col s6">
+        <ul class="col s2">
             <li><b>Ulica:</b> {{patient_data.street_name}}</li>
             <li><b>Numer domu:</b> {{patient_data.house_no}}</li>
             <li><b>Numer mieszkania:</b> {{patient_data.flat_no}}</li>
+        </ul>
+        <ul class="col s2">
             <li><b>Adres pocztowy:</b> {{patient_data.postal_code}}</li>
             <li><b>Miasto:</b> {{patient_data.city}}</li>
         </ul>

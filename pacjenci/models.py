@@ -35,13 +35,13 @@ class Studies(models.Model):
     class Meta:
         verbose_name_plural = "Studies"
 
-    XRAY_CHOICES = (
-        ('RTG','Rentgen'),
-        ('MRI','Magnetic resonance'),
-        ('Other','Other x-ray type')
-    )
+    # XRAY_CHOICES = (
+    #     ('RTG','Rentgen'),
+    #     ('MRI','Magnetic resonance'),
+    #     ('Other','Other x-ray type')
+    # )
     name = models.CharField(max_length=50)
-    xray_type = models.CharField(max_length=5, choices=XRAY_CHOICES, blank=True)
+    # xray_type = models.CharField(max_length=5, choices=XRAY_CHOICES, blank=True)
     study_date = models.DateField()
     age = models.IntegerField(blank=True)
     modalities = models.CharField(max_length=30, blank=True)

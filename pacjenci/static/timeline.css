@@ -63,8 +63,8 @@
 .timeline .timeline-item .timeline-badge.MRI {
   background-color: #ffcdd2;
 }
-.timeline .timeline-item .timeline-badge.Other {
-  background-color: #c8e6c9;
+.timeline .timeline-item .timeline-badge {
+  background-color: #0288d1;
 }
 .timeline .timeline-item .timeline-badge.warning {
   background-color: #d1bd10;
