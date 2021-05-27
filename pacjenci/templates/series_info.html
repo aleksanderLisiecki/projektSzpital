@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% block patient %}
 <div>
-    <h3>Informacje o serii:</h3>
+    <h5>Informacje o serii:</h5>
     <div class="row">
         <ul class="col s6">
             <li><b>Numer:</b> {{series_data.series_num}}</li>
@@ -11,7 +11,7 @@
             <li><b>Komentarz:</b> {{series_data.comment}}</li>
         </ul>
     </div>
-    <h3>DICOM</h3>
+    <h5>DICOM</h5>
     <table class="highlight">
         <thead>
             <tr>

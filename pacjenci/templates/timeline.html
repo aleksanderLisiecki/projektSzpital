@@ -3,33 +3,69 @@
     <div class="row card-panel">
         <form>
             <div class="col s3 form-group">
-                <p>Typ prześwietlenia</p>
-                <!-- {% for type in patient_studies.type %}
-                <p>
-                    <label>
-                        <input type="checkbox" name="{{type}}" />
-                        <span class="blue-text text-lighten-1">{{type}}</span>
-                    </label>
-                </p>
-                {% endfor %} -->
-                <p>
-                    <label>
-                        <input type="checkbox" name="rtg" value="RTG" id="inputRtg" />
-                        <span class="blue-text text-lighten-1">RTG</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input type="checkbox" name="mri" value="MRI" id="inputMri" />
-                        <span class="red-text text-lighten-1">Rezonans</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input type="checkbox" name="other_xray" value="Other" id="inputOther" />
-                        <span class="green-text text-lighten-1">Inne</span>
-                    </label>
-                </p>
+                <p>Typ badania (modalność)</p>
+                <div class="row">
+                  <input type="text" name="modality" id="modality">
+                       <p>Dostępne modalności:
+                            {% for modality in modalities %}
+                                {% if modality == "" %}
+                                {% else %}
+                                    {{modality}}
+                                {% endif %}
+                           {% endfor %}
+                       </p>
+                </div>
+
+<!--                <div class="row">-->
+<!--                    <div class="input-field">-->
+<!--                        <select multiple style="display: block;">-->
+<!--                            {% for modality in modalities %}-->
+<!--                                {% if modality == "" %}-->
+<!--                                <option name="">(pusta modalność)</option>-->
+<!--                                {% else %}-->
+<!--                                <option name="{{modality}}">{{modality}}</option>-->
+<!--                                {% endif %}-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+<!--                {% for modality in modalities %}-->
+<!--                    {% if modality == "" %}-->
+<!--                    <p>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" name="modalities" value="empty"/>-->
+<!--                            <span class="black-text">(pusta modalność)</span>-->
+<!--                        </label>-->
+<!--                    </p>-->
+<!--                    {% else %}-->
+<!--                    <p>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" name="modalities" value="{{modality}}"/>-->
+<!--                            <span class="black-text">{{modality}}</span>-->
+<!--                        </label>-->
+<!--                    </p>-->
+<!--                    {% endif %}-->
+<!--                {% endfor %}-->
+<!--                <p>-->
+<!--                    <label>-->
+<!--                        <input type="checkbox" name="rtg" value="RTG" id="inputRtg" />-->
+<!--                        <span class="blue-text text-lighten-1">RTG</span>-->
+<!--                    </label>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <label>-->
+<!--                        <input type="checkbox" name="mri" value="MRI" id="inputMri" />-->
+<!--                        <span class="red-text text-lighten-1">Rezonans</span>-->
+<!--                    </label>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <label>-->
+<!--                        <input type="checkbox" name="other_xray" value="Other" id="inputOther" />-->
+<!--                        <span class="green-text text-lighten-1">Inne</span>-->
+<!--                    </label>-->
+<!--                </p>-->
             </div>
             <div class="col s2">
                 <p>Data początkowa</p>
@@ -66,7 +102,7 @@
         <ul class="timeline timeline-horizontal">
             {% for studies in patient_studies %}
             <li class="timeline-item">
-                <div class="timeline-badge {{studies.xray_type}}"><i class="glyphicon glyphicon-check"></i></div>
+                <div class="timeline-badge blue darken-2"><i class="glyphicon glyphicon-check"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h5 class="timeline-title">{{studies.name}} <a href="/studies/{{studies.id}}"><i
@@ -75,7 +111,6 @@
                                     class="glyphicon glyphicon-time"></i>{{studies.study_date}}</small></p>
                     </div>
                     <div class="timeline-body">
-                        <p>Typ prześwietlenia: {{studies.xray_type}}</p>
                         <p>Wiek: {{studies.age}}</p>
                         <p>Modalność: {{studies.modalities}}</p>
                         <p>Część ciała: {{studies.body_parts}}</p>
@@ -146,6 +181,15 @@
 
 
     // }
+
+
+
+
+      $(document).ready(function(){
+        //$('select').formSelect();
+        $('select').material_select();
+      });
+
     
     function saveFilter() {
         sessionStorage.setItem("rtg", $('#inputRtg').prop("checked"));
@@ -169,6 +213,7 @@
         else document.getElementById("endDate").value = sessionStorage.getItem("end");
         if(sessionStorage.getItem("body") == "") sessionStorage.setItem("body", "");
         else document.getElementById("bodyPart").value = sessionStorage.getItem("body");
+
     }
 </script>
 {% endblock timeline %}
