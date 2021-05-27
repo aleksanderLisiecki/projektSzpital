@@ -17,7 +17,8 @@ class DicomReader:
     patients_birth_date = ''
     patients_sex = ''
 
-    def __init__(self, dicom_file):
+    def __init__(self, file_path):
+        dicom_file = pydicom.filereader.dcmread(file_path)
         self.patients_name = self._getValue(dicom_file, PATIENTS_NAME)
         self.patient_id = self._getValue(dicom_file, PATIENT_ID)
         self.patients_birth_date = self._getValue(dicom_file, PATIENTS_BIRTH_DATE)

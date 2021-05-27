@@ -35,13 +35,7 @@ class Studies(models.Model):
     class Meta:
         verbose_name_plural = "Studies"
 
-    XRAY_CHOICES = (
-        ('RTG','Rentgen'),
-        ('MRI','Magnetic resonance'),
-        ('Other','Other x-ray type')
-    )
     name = models.CharField(max_length=50)
-    xray_type = models.CharField(max_length=5, choices=XRAY_CHOICES, blank=True)
     study_date = models.DateField()
     age = models.IntegerField(blank=True)
     modalities = models.CharField(max_length=30, blank=True)
@@ -69,10 +63,18 @@ class Series(models.Model):
 class DICOM(models.Model):
     class Meta:
         verbose_name_plural = "DICOM"
-    instance = models.IntegerField()
-    location = models.CharField(max_length=20)
+    instance = models.IntegerField(blank=True, null=True)
+    description = models.TextField(max_length=1000, blank=True, null=True)
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
-    # dicom_file = models.FileField(blank=True, default=None, null=True)
+    dicom_file = models.FileField(blank=True, default=None, null=True)
 
     def __str__(self):
         return self.series.__str__() + '/' + str(self.instance)
+
+    def save(self, *args, **kwargs):
+
+        description = ''
+        description += 'Location: ' + str(self.dicom_file.path) + ','
+
+        self.description = description
+        super(DICOM, self).save(*args, **kwargs)
