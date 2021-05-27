@@ -1,4 +1,9 @@
+import pydicom
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from src.read_dicom import DicomReader
 
 
 class Patient(models.Model):
@@ -49,6 +54,7 @@ class Studies(models.Model):
 class Series(models.Model):
     class Meta:
         verbose_name_plural = "Series"
+
     series_num = models.IntegerField()
     date = models.DateField()
     body_part = models.CharField(max_length=20, blank=True)
@@ -63,6 +69,7 @@ class Series(models.Model):
 class DICOM(models.Model):
     class Meta:
         verbose_name_plural = "DICOM"
+
     instance = models.IntegerField(blank=True, null=True)
     description = models.TextField(max_length=1000, blank=True, null=True)
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
@@ -71,10 +78,22 @@ class DICOM(models.Model):
     def __str__(self):
         return self.series.__str__() + '/' + str(self.instance)
 
-    def save(self, *args, **kwargs):
+    # def save(self, *args, **kwargs):
+    #
+    #     description = ''
+    #     description += 'Location: ' + str(self.dicom_file.path) + ','
+    #
+    #     self.description = description
+    #     super(DICOM, self).save(*args, **kwargs)
 
-        description = ''
-        description += 'Location: ' + str(self.dicom_file.path) + ','
 
-        self.description = description
-        super(DICOM, self).save(*args, **kwargs)
+@receiver(post_save, sender=DICOM)
+def DICOM_handler(sender, created, instance=False, **kwargs):
+    if created:
+        dicom_file = pydicom.filereader.dcmread(instance.dicom_file.path)
+        dicom = DicomReader(dicom_file)
+        study_date = dicom.study_date[:2] + '.' + dicom.study_date[4:6] + '.' + dicom.study_date[:4]
+        series_date = dicom.study_date[:2] + '.' + dicom.study_date[4:6] + '.' + dicom.study_date[:4]
+        description = study_date + '|' + dicom.patient_age + '|' + dicom.modality + '|' + dicom.body_part + '|' + str(dicom.series_num) + '|' + series_date + '|' + dicom.series_description + '|' + str(dicom.series_num)
+        instance.description = description
+        instance.save()
