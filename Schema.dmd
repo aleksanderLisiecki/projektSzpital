@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Schema" id="C6F17C20-48BC-FF86-B591-980799064007" version="3.5">
-<createdBy>Komp</createdBy>
-<createdTime>2021-04-27 11:09:46 UTC</createdTime>
-<ownerDesignName>Schema</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>C6F17C20-48BC-FF86-B591-980799064007</designId>
-</OSDM_Design>
